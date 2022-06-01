@@ -6,8 +6,66 @@
         <script src="resources/angular.js"></script>
         <link rel="stylesheet" href="resources/bootstrap.css"/>
         <script src="resources/chamados_controller.js"></script>
+        <script src="resources/value.js"></script>
+        <style>
+            .table-wrap {
+                height: 300px;
+                overflow-y: auto;
+            }
+        </style>
     </head>
     <body ng-controller="chamadosController">
-        <h1>Hello World! {{teste}}</h1>
+        <h1 style="text-align: center">Hello World! {{teste}}</h1>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-4">
+                    <form>
+                        <div class="mb-3">
+                            <label for="id" class="form-label">ID</label>
+                            <input type="number" ng-model="chamado.id" class="form-control" id="id" disabled aria-describedby="assunto">
+                        </div>
+                        <div class="mb-3">
+                            <label for="assunto" class="form-label">Assunto</label>
+                            <input type="text" ng-model="chamado.assunto" class="form-control" id="assunto" aria-describedby="assunto">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <Textarea rows="5" type="text" ng-model="chamado.mensagem" class="form-control" id="mensagem"></Textarea>
+                        </div>
+                        <button type="submit" ng-click="salvar(chamado)" class="btn btn-primary">Salvar</button>
+                        <button type="reset" ng-click="cancelar()" class="btn btn-secondary">Cancelar</button>
+
+                    </form>
+                </div>
+                <div class="col-6 table-wrap">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="1">ID</th>
+                            <th colspan="2">Assunto</th>
+                            <th colspan="4">Mensagem</th>
+                            <th colspan="1">Status</th>
+                            <th colspan="4">Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="chamado in chamados">
+                            <td colspan="1">{{chamado.id}}</td>
+                            <td colspan="2">{{chamado.assunto}}</td>
+                            <td colspan="4">{{chamado.mensagem}}</td>
+                            <td colspan="1">{{chamado.status}}</td>
+                            <td colspan="1">
+                                <button type="submit" ng-click="setChamado(chamado)" class="btn btn-warning">Editar</button>
+                                <button type="submit" ng-click="setChamado(chamado)" class="btn btn-danger">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                 <div class="col-1" ng-if="erro">{{erro}}</div>
+            </div>
+        </div>
     </body>
 </html>

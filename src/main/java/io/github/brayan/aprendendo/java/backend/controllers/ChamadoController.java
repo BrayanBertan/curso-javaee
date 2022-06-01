@@ -35,6 +35,18 @@ public class ChamadoController {
         chamados.add(new Chamado(1,"Teste","mensagem teste",Status.NOVO));
         chamados.add(new Chamado(2,"Teste2","mensagem teste2",Status.FECHADO));
         chamados.add(new Chamado(3,"Teste3","mensagem teste3",Status.PENDENTE));
+        chamados.add(new Chamado(1,"Teste","mensagem teste",Status.NOVO));
+        chamados.add(new Chamado(2,"Teste2","mensagem teste2",Status.FECHADO));
+        chamados.add(new Chamado(3,"Teste3","mensagem teste3",Status.PENDENTE));
+        chamados.add(new Chamado(1,"Teste","mensagem teste",Status.NOVO));
+        chamados.add(new Chamado(2,"Teste2","mensagem teste2",Status.FECHADO));
+        chamados.add(new Chamado(3,"Teste3","mensagem teste3",Status.PENDENTE));
+        chamados.add(new Chamado(1,"Teste","mensagem teste",Status.NOVO));
+        chamados.add(new Chamado(2,"Teste2","mensagem teste2",Status.FECHADO));
+        chamados.add(new Chamado(3,"Teste3","mensagem teste3",Status.PENDENTE));
+        chamados.add(new Chamado(1,"Teste","mensagem teste",Status.NOVO));
+        chamados.add(new Chamado(2,"Teste2","mensagem teste2",Status.FECHADO));
+        chamados.add(new Chamado(3,"Teste3","mensagem teste3",Status.PENDENTE));
         return chamados;
     }
     
