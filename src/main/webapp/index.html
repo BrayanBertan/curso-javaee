@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="chamadosApp">
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="resources/angular.js"></script>
+        <link rel="stylesheet" href="resources/bootstrap.css"/>
+        <script src="resources/chamados_controller.js"></script>
     </head>
-    <body>
-        <h1>Hello World!</h1>
+    <body ng-controller="chamadosController">
+        <h1>Hello World! {{teste}}</h1>
     </body>
 </html>
