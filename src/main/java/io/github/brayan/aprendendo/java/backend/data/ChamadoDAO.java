@@ -46,7 +46,7 @@ public class ChamadoDAO{
     
     public int alterar(Chamado chamado) throws SQLException, ClassNotFoundException {
         int linhasAfetadas = 0;
-        String sqlQuery = "UPDATE chamados assunto = ?, mensagem = ? ,status = ? WHERE id = ?";
+        String sqlQuery = "UPDATE chamados SET assunto = ?, mensagem = ? ,status = ? WHERE id = ?";
         try {
             PreparedStatement stmt = this.conexaoJDBC.getConnection().prepareStatement(sqlQuery);
             stmt.setString(1, chamado.getAssunto());

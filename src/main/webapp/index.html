@@ -19,7 +19,6 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-1"></div>
                 <div class="col-4 table-wrap">
                     <form>
                         <div class="mb-3">
@@ -39,7 +38,7 @@
 
                     </form>
                 </div>
-                <div class="col-6 table-wrap">
+                <div class="col-8 table-wrap">
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -58,13 +57,17 @@
                             <td colspan="1">{{chamado.status}}</td>
                             <td colspan="1">
                                 <button type="submit" ng-click="setChamado(chamado)" class="btn btn-warning">Editar</button>
-                                <button type="submit" ng-click="setChamado(chamado)" class="btn btn-danger">Excluir</button>
+                                <button type="submit" ng-click="deletar(chamado.id)" class="btn btn-danger">Excluir</button>
+                                <button type="submit" ng-show="chamado.status !== 'FECHADO'" ng-click="concluir(chamado.id)" class="btn btn-success">Concluir</button>
+
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 </div>
-                 <div class="col-1" ng-if="erro">{{erro}}</div>
+            </div>
+            <div class="row">
+                <div class="col-12 alert alert-danger" ng-if="erro">{{erro}}</div>
             </div>
         </div>
     </body>

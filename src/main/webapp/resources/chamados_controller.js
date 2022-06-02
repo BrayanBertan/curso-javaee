@@ -37,11 +37,17 @@ app.controller("chamadosController", function ($scope, $http,apiValues){
         }, (retorno)=> $scope.setErro("erro deletar" + retorno));  
     };
     
+    $scope.concluir = function(id){
+       $http.put(apiValues.baseUrl+id+"/").then(function (retorno){
+            $scope.getChamados();
+        }, (retorno)=> $scope.setErro("erro concluir" + retorno));
+    };
+    
     $scope.cancelar = () => delete $scope.chamado;
     
     $scope.setErro = (erro) => erro?$scope.erro = erro: delete erro;
     
-     $scope.setChamado = (chamado) => $scope.chamado = chamado;
+    $scope.setChamado = (chamado) => $scope.chamado = angular.copy(chamado);
     
     $scope.getChamados();
 });
