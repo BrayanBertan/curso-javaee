@@ -21,6 +21,13 @@ public class Chamado {
         this.mensagem = mensagem;
         this.status = status;
     }
+    
+     public Chamado(String assunto, String mensagem, Status status) {
+        this.assunto = assunto;
+        this.mensagem = mensagem;
+        this.status = status;
+    }
+
 
     public Chamado() {
     }
